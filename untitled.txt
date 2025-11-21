@@ -1,0 +1,296 @@
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>IslamBlk — الموقع الشخصي</title>
+  <meta name="description" content="موقع اسلام — ملف تعريفي وبورتفوليو" />
+
+  <style>
+    :root{
+      --bg:#f7f7fb;
+      --card:#ffffff;
+      --text:#0f1724;
+      --muted:#6b7280;
+      --accent:#2563eb;
+      --glass: rgba(255,255,255,0.6);
+    }
+    [data-theme="dark"]{
+      --bg:#0b1220;
+      --card:#071021;
+      --text:#e6eef8;
+      --muted:#9aa6bf;
+      --accent:#60a5fa;
+      --glass: rgba(255,255,255,0.04);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Segoe UI", Tahoma, system-ui, -apple-system, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,var(--bg),#eef2ff 60%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding:24px;
+    }
+
+    .container{max-width:1000px;margin:0 auto}
+
+    header{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:22px;
+    }
+    .brand{display:flex; gap:12px; align-items:center; text-decoration:none; color:inherit}
+    .logo{
+      width:48px; height:48px; border-radius:12px;
+      display:flex; align-items:center; justify-content:center;
+      background:linear-gradient(135deg,var(--accent),#7c3aed);
+      color:white; font-weight:700; font-size:18px;
+      box-shadow: 0 6px 18px rgba(37,99,235,0.12);
+    }
+    nav{display:flex; gap:12px; align-items:center}
+    nav a{
+      text-decoration:none;
+      padding:8px 12px;
+      border-radius:8px;
+      color:var(--muted);
+      font-weight:600;
+    }
+    nav a:hover{color:var(--text); background:var(--glass)}
+
+    .theme-toggle{
+      display:inline-flex; gap:8px; align-items:center;
+      background:transparent; border:1px solid rgba(0,0,0,0.06);
+      padding:8px; border-radius:10px; cursor:pointer;
+    }
+
+    .hero{
+      background:linear-gradient(180deg,rgba(255,255,255,0.6),transparent);
+      border-radius:16px;
+      padding:28px;
+      display:flex;
+      gap:20px;
+      align-items:center;
+      box-shadow:0 8px 30px rgba(2,6,23,0.06);
+      margin-bottom:20px;
+      backdrop-filter: blur(6px);
+    }
+    .hero .left{flex:1}
+    .hero h1{margin:0 0 8px 0; font-size:28px}
+    .hero p{margin:0;color:var(--muted)}
+    .avatar{
+      width:110px;height:110px;border-radius:18px;
+      background:linear-gradient(180deg,#fff,#f1f5f9);
+      display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:700;
+      box-shadow: 0 8px 24px rgba(16,24,40,0.08);
+    }
+
+    section{margin:18px 0}
+    .grid{
+      display:grid;
+      gap:14px;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      padding:16px;
+      box-shadow:0 6px 18px rgba(2,6,23,0.04);
+    }
+    .muted{color:var(--muted); font-size:14px}
+
+    .thumb{
+      height:120px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+      font-weight:700; color:white;
+      background:linear-gradient(135deg,#7c3aed,#2563eb);
+    }
+
+    form{display:grid; gap:10px}
+    input, textarea{
+      padding:10px;border-radius:8px;border:1px solid rgba(15,23,36,0.06);
+      background:transparent;color:var(--text);outline:none;
+      font-size:14px;
+    }
+    button.primary{
+      background:var(--accent); color:white; border:none; padding:10px 14px;border-radius:10px;
+      font-weight:700; cursor:pointer;
+    }
+
+    footer{margin-top:28px;color:var(--muted); text-align:center; font-size:14px}
+
+    @media (max-width:640px){
+      .hero{flex-direction:column; text-align:center}
+      header{flex-direction:column; align-items:flex-start; gap:12px}
+      nav{width:100%; justify-content:space-between}
+    }
+
+    .row{display:flex;gap:8px;align-items:center}
+    a.social{display:inline-block;padding:8px 10px;border-radius:8px;text-decoration:none;background:var(--glass);color:var(--text)}
+  </style>
+</head>
+<body>
+  <div class="container" id="page">
+    <header>
+      <a class="brand" href="#">
+        <div class="logo">IB</div>
+        <div>
+          <div style="font-weight:800">IslamBlk</div>
+          <div class="muted" style="font-size:13px;margin-top:2px">مطور — مصمم واجهات</div>
+        </div>
+      </a>
+
+      <div style="display:flex; gap:10px; align-items:center">
+        <nav>
+          <a href="#home">الرئيسية</a>
+          <a href="#about">عنّي</a>
+          <a href="#work">أعمالي</a>
+          <a href="#contact">تواصل</a>
+        </nav>
+
+        <button class="theme-toggle" id="themeBtn">
+          <span id="themeIcon">🌙</span>
+          <span class="muted" style="font-size:13px">الوضع الداكن</span>
+        </button>
+      </div>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="left">
+        <h1>أهلاً، أنا إسلام</h1>
+        <p class="muted">مطور واجهات وتجربة مستخدم — أصنع مواقع بسيطة، سريعة وجذابة. هنا بعض أعمالي وروابط للتواصل.</p>
+
+        <div style="margin-top:14px" class="row">
+          <a class="social" href="https://github.com/islamblk" target="_blank">GitHub</a>
+          <a class="social" href="#" target="_blank">LinkedIn</a>
+          <a class="social" href="mailto:iblk9683@gmail.com">البريد</a>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:10px;align-items:center">
+        <div class="avatar">IB</div>
+        <div class="muted" style="font-size:13px">مطور واجهات — HTML / CSS / JS</div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="card">
+        <h3>عنّي</h3>
+        <p class="muted">أنا إسلام — أهتم ببناء واجهات بسيطة ومفهومة، أستخدم تقنيات الويب القياسية لإنشاء تجربة مستخدم سريعة وسهلة التعديل. أعمل على مشاريع فردية ومشاركة شفرات مفتوحة المصدر.</p>
+
+        <div style="margin-top:12px" class="grid">
+          <div class="card">
+            <strong>المهارات</strong>
+            <p class="muted" style="margin-top:8px">HTML · CSS · JavaScript · Responsive Design · Git</p>
+          </div>
+          <div class="card">
+            <strong>الخدمات</strong>
+            <p class="muted" style="margin-top:8px">تصميم واجهات · تطوير واجهات تفاعلية · تحسين أداء الصفحات</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <h3 style="margin-bottom:10px">معرض أعمال</h3>
+      <div class="grid">
+        <div class="card">
+          <div class="thumb">مشروع 1</div>
+          <p class="muted" style="margin-top:8px">صفحة هبوط متجاوبة لمتجر إلكتروني.</p>
+          <div style="margin-top:8px"><a href="#">عرض المشروع</a></div>
+        </div>
+
+        <div class="card">
+          <div class="thumb">مشروع 2</div>
+          <p class="muted" style="margin-top:8px">لوحة تحكم إدارية بسيطة وسهلة الاستخدام.</p>
+          <div style="margin-top:8px"><a href="#">عرض المشروع</a></div>
+        </div>
+
+        <div class="card">
+          <div class="thumb">مشروع 3</div>
+          <p class="muted" style="margin-top:8px">موقع شخصي وبورتفوليو متكامل.</p>
+          <div style="margin-top:8px"><a href="#">عرض المشروع</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="card">
+        <h3>تواصل معي</h3>
+        <p class="muted">أرسل رسالة قصيرة وسأرد عليك إن شاء الله.</p>
+
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <input type="text" id="name" placeholder="اسمك" required />
+          <input type="email" id="email" placeholder="البريد الإلكتروني" required />
+          <textarea id="message" placeholder="نص رسالتك" rows="5" required></textarea>
+
+          <div style="display:flex; gap:8px; align-items:center; margin-top:6px">
+            <button type="submit" class="primary">أرسل رسالة</button>
+            <button type="button" onclick="copyEmail()" style="padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:transparent;cursor:pointer">نسخ الإيميل</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      مُنشأ بواسطة IslamBlk · يمكنك تعديل هذا الملف وإعادة رفعه إلى المستودع
+    </footer>
+  </div>
+
+  <script>
+    (function(){
+      const root = document.documentElement;
+      const btn = document.getElementById('themeBtn');
+      const icon = document.getElementById('themeIcon');
+      const saved = localStorage.getItem('theme') || 'light';
+      if(saved === 'dark'){ root.setAttribute('data-theme','dark'); btn.setAttribute('aria-pressed','true'); icon.textContent='☀️' }
+
+      btn.addEventListener('click', () => {
+        const nowDark = root.getAttribute('data-theme') === 'dark';
+        if(nowDark){
+          root.removeAttribute('data-theme');
+          localStorage.setItem('theme','light');
+          btn.setAttribute('aria-pressed','false');
+          icon.textContent='🌙';
+        } else {
+          root.setAttribute('data-theme','dark');
+          localStorage.setItem('theme','dark');
+          btn.setAttribute('aria-pressed','true');
+          icon.textContent='☀️';
+        }
+      });
+    })();
+
+    function copyEmail(){
+      const email = 'iblk9683@gmail.com';
+      navigator.clipboard?.writeText(email).then(()=>{
+        alert('تم نسخ الإيميل: ' + email);
+      }).catch(()=>{
+        prompt('انسخ الإيميل يدويًا:', email);
+      });
+    }
+
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const subject = encodeURIComponent('رسالة من ' + name);
+      const body = encodeURIComponent(
+        `المرسل: ${name}\nالبريد: ${email}\n\n${message}`
+      );
+
+      const to = 'iblk9683@gmail.com';
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
